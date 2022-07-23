@@ -1,0 +1,25 @@
+{
+  "name": "gerrit-action",
+  "version": "1.0.0",
+  "description": "Interacts with gerrit.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alonbl/gerrit-action.git"
+  },
+  "keywords": [],
+  "author": "Alon Bar-Lev <alon.barlev@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alonb/gerrit-action/issues"
+  },
+  "homepage": "https://github.com/alonbl/gerrit-action",
+  "dependencies": {
+    "@actions/core": "^1.6.0",
+    "@actions/github": "^5.0.1",
+    "cross-fetch": "^3.1.5"
+  }
+}

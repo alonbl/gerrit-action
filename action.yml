@@ -1,0 +1,36 @@
+name: 'Gerrit Action'
+description: 'Perform a gerrit action'
+inputs:
+  type:
+    description: 'Type of action to perform'
+    required: false
+    default: 'change-comment'
+  status:
+    description: 'The status to report, for example {{ job.status }}'
+    required: false
+    default: success
+  comment:
+    description: 'Comment to add'
+    required: false
+    default: 'CI: Workflow {job}@{workflow}: {status} ({runUrl})'
+  vote:
+    description: 'Vote syntax: status:label=score status:label=score ...'
+    required: false
+    default: 'failure:Verified=-1'
+  notify:
+    description: 'Who to notify: NONE, OWNER, OWNER_REVIEWERS and ALL, default OWNER'
+    required: false
+    default: 'OWNER'
+  ref-template:
+    description: 'Regular expression to parse ref'
+    required: false
+    default: '^refs/heads/(?<environment>.*)/changes/\d+/(?<change>\d+)/(?<revision>\d+)$'
+  gerrit-environments:
+    description: 'Gerrit environments JSON {"@environment@": { "url":, "authorization": }}'
+    required: yes
+outputs:
+  applied:
+    description: 'Was action was applied into Gerrit can be either false or true'
+runs:
+  using: 'node16'
+  main: 'index.js'
