@@ -32,7 +32,7 @@ async function changeComment() {
 		throw new Error(`Cannot find environment '${refMatcher.groups.environment}' not 'default' in environments`);
 	}
 
-	const gerritUrl = `${gerritEnvironment.url}/a/changes/${refMatcher.groups.change}/revisions/${refMatcher.groups.revision}/review`
+	const gerritUrl = `${gerritEnvironment.url}/a/changes/${refMatcher.groups.change.replace(/#/g, "~")}/revisions/${refMatcher.groups.revision}/review`
 	const runUrl = `${github.context.payload.repository.html_url}/actions/runs/${github.context.runId}`;
 
 	const review = {
