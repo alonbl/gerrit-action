@@ -32,5 +32,5 @@ outputs:
   applied:
     description: 'Was action was applied into Gerrit can be either false or true'
 runs:
-  using: 'node16'
+  using: 'node20'
   main: 'index.js'
