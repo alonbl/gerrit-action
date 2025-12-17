@@ -24,7 +24,7 @@ inputs:
   ref-template:
     description: 'Regular expression to parse ref'
     required: false
-    default: '^refs/heads/(?<environment>.*)/(?<change>[^/]+)/(?<revision>\d+)$'
+    default: '^refs/heads/(?<environment>.*)/(?<change>[^/]+)/(?<revision>[A-Za-z0-9]+)$'
   gerrit-environments:
     description: 'Gerrit environments JSON {"@environment@": { "url":, "authorization": }}'
     required: yes
