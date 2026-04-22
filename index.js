@@ -1,6 +1,6 @@
-const fetch = require('cross-fetch');
-const core = require('@actions/core');
-const github = require('@actions/github');
+import fetch from 'cross-fetch';
+import * as core from '@actions/core';
+import * as github from '@actions/github';
 
 if (!String.prototype.format) {
 	String.prototype.format = function(dict) {
